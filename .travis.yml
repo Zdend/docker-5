@@ -11,12 +11,12 @@ script:
 
 after_success:
     - docker build -t zdend/docker-5-client ./client
-    - docker build -t zdend/docker-5-ngnix ./nginx
+    - docker build -t zdend/docker-5-nginx ./nginx
     - docker build -t zdend/docker-5-server ./server
     - docker build -t zdend/docker-5-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push zdend/docker-5-client
-    - docker push zdend/docker-5-ngnix
+    - docker push zdend/docker-5-nginx
     - docker push zdend/docker-5-server
     - docker push zdend/docker-5-worker
 
