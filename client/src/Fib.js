@@ -9,10 +9,6 @@ class Fib extends Component {
   };
 
   componentDidMount() {
-    this.fetchData();
-  }
-
-  fetchData() {
     this.fetchValues();
     this.fetchIndexes();
   }
@@ -36,8 +32,6 @@ class Fib extends Component {
       index: this.state.index
     });
     this.setState({ index: '' });
-
-    this.fetchData();
   };
 
   renderSeenIndexes() {
